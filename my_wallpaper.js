@@ -6,7 +6,7 @@ let rect_height = 20;
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width  = 200;
@@ -19,6 +19,8 @@ function wallpaper_background() {
 }
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
+
+
 
 angleMode(RADIANS);
 
@@ -74,11 +76,11 @@ for(let c = 0; c <= 500; c ++)
    circle(x2,y2, circleRad2, circleRad2);
  }
 }
-strokeWeight(60)
+strokeWeight(0)
 noFill()
 rect(0,0,200,200)
 
- noLoop();
+ //noLoop();
 
   
 }
