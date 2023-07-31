@@ -20,7 +20,9 @@ function wallpaper_background() {
 
 function my_symbol() { // do not rename this function. Treat this similarly to a Draw function
 
+
 angleMode(DEGREES);
+
 
 let colours = ['#1A0E3E', '#1F1A70', '#DB488B', '#FF83F6', '#3ED0EB']
 let colour = random(colours)
@@ -43,9 +45,12 @@ for (let sx = 0; sx <= 200; sx = sx + 100) {
   }
 }
 
+
   stroke(colour);
   fill(colour);
   circle(100, 100, 75);
+
+
 
   
   colorMode(RGB,255,255,255, 0);
