@@ -27,7 +27,6 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   let colours = ['#1A0E3E', '#1F1A70', '#DB488B', '#FF83F6', '#3ED0EB']
   let colour = random(colours)
-  let number = random(0,1);
   let triangleX = 100
   let triangleY = 70
   let randomRot = random(0,360);
@@ -43,9 +42,9 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     }
   }
   
-    drawingContext.shadowBlur = 50;
+    drawingContext.shadowBlur = 20;
     drawingContext.shadowColor = color(colour);
-
+    drawingContext.shadowAlpha = 100;
     
 
     stroke(colour);
