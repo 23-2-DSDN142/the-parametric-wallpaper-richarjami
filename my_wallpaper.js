@@ -6,7 +6,7 @@ let rect_height = 20;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(FIT_TO_SCREEN);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
@@ -23,20 +23,29 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
 
   angleMode(DEGREES);
 
-  
-
-  let colours = ['#1A0E3E', '#1F1A70', '#DB488B', '#FF83F6', '#3ED0EB']
-  let colour = random(colours)
+  let useAltColour = true;
   let triangleX = 100
   let triangleY = 70
   let randomRot = random(0,360);
-  
+
+  var colours;
+  var bgCol;
+if (useAltColour === true) {
+  var colours = ['#1A0E3E', '#1F1A70', '#DB488B', '#FF83F6', '#3ED0EB'];
+  var bgCol = 0
+} else {
+  var colours = ['#F285A2', '#99E2F2', '#2E593D', '#F23E16', '#F25244'];
+  var bgCol = 180
+}
+  let colour = random(colours);
+
+
   strokeWeight(0);
   
   for (let sx = 0; sx <= 200; sx = sx + 50) {
     for (let sy = 0; sy <= 200; sy = sy + 50) {
   
-    fill(random(220,240));
+    fill(random(220-bgCol,240-bgCol));
     square(sx,sy,100);
   
     }
@@ -45,15 +54,11 @@ function my_symbol() { // do not rename this function. Treat this similarly to a
     drawingContext.shadowBlur = 20;
     drawingContext.shadowColor = color(colour);
     drawingContext.shadowAlpha = 100;
-    
 
     stroke(colour);
     fill(colour);
     circle(100, 100, 75);
-    //arc(100,100,75,75,0,360);
-
-    
-
+   
     translate(triangleX, triangleY + 30);
     rotate(randomRot);
     translate(-triangleX, -triangleY - 30);
